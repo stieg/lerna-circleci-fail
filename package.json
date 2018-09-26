@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "lerna": "3.4.0"
+  },
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "10.11.0",
+    "npm": "6.4.1"
+  },
+  "scripts": {
+    "audit": "lerna exec npm audit",
+    "build": "lerna exec npm run build",
+    "lint": "lerna exec npm run lint",
+    "postinstall": "lerna bootstrap",
+    "test": "lerna exec npm test",
+    "test:integration": "lerna exec npm run test:integration",
+    "test:unit": "lerna exec npm run test:unit"
+  },
+  "private": true
+}

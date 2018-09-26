@@ -1,0 +1,12 @@
+.docker.tgz
+.airfordable-packages
+.npmrc
+coverage/
+dist/
+lerna-debug.log
+node_modules/
+vscode-workspaces/
+jest_0/
+ts-node*
+*.log
+
