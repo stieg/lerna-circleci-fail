@@ -1,0 +1,14 @@
+version: 2
+
+jobs:
+  build:
+    branches:
+    docker:
+      - image: node:10-alpine
+    steps:
+      - checkout
+
+      - run:
+          name: NPM Install & Lerna Bootstrap
+          command: |
+            npm install
