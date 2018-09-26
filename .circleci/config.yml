@@ -6,6 +6,26 @@ jobs:
       - image: node:10-alpine
     steps:
       - checkout
+
+      - run:
+          name: Basic Container data
+          command: |
+            echo "--- Default limits ---"
+            ulimit -a
+
+            echo "--- CPU Count ---"
+            grep -c proc /proc/cpuinfo
+
+            echo "--- Memory Info ---"
+            head /proc/meminfo
+
       - run:
           name: NPM Install & Lerna Bootstrap
-          command: npm install --unsafe-perm
+          command: |
+            ulimit -a
+
+            # Set soft virtual RAM limit to 3G
+            ulimit -Sv 3145728
+
+            ulimit -a
+            npm install --unsafe-perm
